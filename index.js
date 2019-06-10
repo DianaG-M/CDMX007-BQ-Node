@@ -12,7 +12,13 @@ const app = express();
 
 
 // Conectar aplicación a MongoDB
-mongoose.connect(mongoUrl, { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/products', { useNewUrlParser: true, useCreateIndex: true }, (err) => {
+    if (err) {
+        return err;
+    } else {
+        console.log('Conectado con Mongo');
+    }
+});
 
 
 app.set('config', config);
@@ -25,12 +31,12 @@ app.use(authMiddleware(secret));
 
 // Registrar rutas
 routes(app, (err) => {
-  if (err) {
-    throw err;
-  }
+    if (err) {
+        throw err;
+    }
 
-  // Registro de "middleware" que maneja posibles errores
-  app.use(errorHandler);
+    // Registro de "middleware" que maneja posibles errores
+    app.use(errorHandler);
 
-  app.listen(port, () => console.log(`App listening on port ${port}`));
+    app.listen(3002, () => console.log(`App listening on port ${port}`));
 });
