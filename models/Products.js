@@ -35,7 +35,7 @@ const ProductsModel = mongoose.Schema({
 
 // conversion a modelo
 
-const Breakfast = mongoose.model('Products', ProductsModel, 'breakfast');
+const Breakfast = mongoose.model('Products', ProductsModel, 'desayuno');
 const Food = mongoose.model('Products', ProductsModel, 'food');
 
 

@@ -45,13 +45,13 @@ routes(app, (err) => {
 
 const { Breakfast, Food } = require('./models/Products.js');
 
-app.get('/breakfast', (req, res) => {
+app.get('/desayuno', (req, res) => {
     Breakfast.find({}, (err, breakfast) => {
         if (err) {
             return err;
         } else {
-            console.log(breakfast);
             res.send(breakfast);
+            console.log(breakfast);
         }
     });
 });
@@ -67,13 +67,13 @@ app.get('/food', (req, res) => {
     });
 });
 
-app.get('/breakfast/:id', (req, res) => {
-    Breakfast.find({}, (err, breakfast) => {
-        if (err) {
-            return err;
-        } else {
-            console.log(breakfast);
-            res.send(breakfast);
-        }
-    });
-});
+// app.get('/breakfast/:id', (req, res) => {
+//     Breakfast.find({}, (err, breakfast) => {
+//         if (err) {
+//             return err;
+//         } else {
+//             console.log(breakfast);
+//             res.send(breakfast);
+//         }
+//     });
+// });
