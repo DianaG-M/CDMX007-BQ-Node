@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 // Schema
 
-const BreakfastModel = mongoose.Schema({
+const ProductsModel = mongoose.Schema({
     name: {
         type: String,
         require: true,
@@ -35,8 +35,8 @@ const BreakfastModel = mongoose.Schema({
 
 // conversion a modelo
 
-const Breakfast = mongoose.model('Breakfast', BreakfastModel, 'breakfast');
-const Food = mongoose.model('Food', BreakfastModel, 'food');
+const Breakfast = mongoose.model('Products', ProductsModel, 'desayuno');
+const Food = mongoose.model('Products', ProductsModel, 'food');
 
 
 //Exportación

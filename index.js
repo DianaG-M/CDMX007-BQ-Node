@@ -64,3 +64,14 @@ app.get('/food', (req, res) => {
         }
     });
 });
+
+// app.get('/breakfast/:id', (req, res) => {
+//     Breakfast.find({}, (err, breakfast) => {
+//         if (err) {
+//             return err;
+//         } else {
+//             console.log(breakfast);
+//             res.send(breakfast);
+//         }
+//     });
+// });
