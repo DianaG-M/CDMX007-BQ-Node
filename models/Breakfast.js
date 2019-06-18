@@ -36,8 +36,9 @@ const BreakfastModel = mongoose.Schema({
 // conversion a modelo
 
 const Breakfast = mongoose.model('Breakfast', BreakfastModel, 'breakfast');
+const Food = mongoose.model('Food', BreakfastModel, 'food');
 
 
 //Exportación
 
-module.exports = { Breakfast };
+module.exports = { Breakfast, Food };
