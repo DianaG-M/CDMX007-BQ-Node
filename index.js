@@ -41,9 +41,7 @@ routes(app, (err) => {
     app.listen(port, () => console.log(`App listening on port ${port}`));
 });
 
-
-
-const { Breakfast, Food } = require('./models/Products.js');
+const { Breakfast, Food } = require('./models/Breakfast.js');
 
 app.get('/breakfast', (req, res) => {
     Breakfast.find({}, (err, breakfast) => {
@@ -67,13 +65,13 @@ app.get('/food', (req, res) => {
     });
 });
 
-app.get('/breakfast/:id', (req, res) => {
-    Breakfast.find({}, (err, breakfast) => {
-        if (err) {
-            return err;
-        } else {
-            console.log(breakfast);
-            res.send(breakfast);
-        }
-    });
-});
+// app.get('/breakfast/:id', (req, res) => {
+//     Breakfast.find({}, (err, breakfast) => {
+//         if (err) {
+//             return err;
+//         } else {
+//             console.log(breakfast);
+//             res.send(breakfast);
+//         }
+//     });
+// });
